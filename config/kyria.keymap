@@ -8,18 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-  behaviors {
-    hm: homerow_mods {
-      compatible = "zmk,behavior-hold-tap;
-      label = "HOMEROW_MODS";
-      #binding-cells = <2>;
-      tapping-term-ms = <150>;
-      quick_tap_ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-    };
-  };
-
 	keymap {
 		compatible = "zmk,keymap";
 
@@ -30,10 +18,10 @@
 // | SHIFT |  Z  |  X  |  C  |  D  |  V  |  GUI  | L SHIFT |  | L SHIFT | R-ALT |  K  |  H  |  ,  |  .  |  /  | CTRL |
 //                     |  ←  |  →  | TAB | SPACE |   ESC   |  |   CTRL  | BSPC  | RET |  ↑  |  ↓  |
 			bindings = <
-	&kp ESC   &kp Q       &kp W      &kp F      &kp P       &kp B                                                         &kp J       &kp L       &kp U      &kp Y      &kp SEMI    &kp BSLH
-	&kp TAB   &hm LCTRL A &hm LGUI R &hm LALT S &hm LSHFT T &kp G                                                         &kp M       &hm RSHFT N &hm RALT E &hm RGUI I &hm RCTRL O &kp SQT
-	&kp LSHFT &kp Z       &kp X      &kp C      &kp D       &kp V   &kp LGUI        &kp LSHFT    &kp LSHFT &kp RALT       &kp K       &kp H       &kp COMMA  &kp DOT    &kp FSLH    &kp RCTRL
-	                                 &kp LEFT   &kp RIGHT   &kp TAB &hm LSHFT SPACE &kp ESC      &kp RCTRL &hm RSHFT BSPC &kp RET     &kp UP      &kp DOWN
+	&kp ESC   &kp Q       &kp W      &kp F      &kp P       &kp B                                                   &kp J       &kp L       &kp U      &kp Y      &kp SEMI    &kp BSLH
+	&kp TAB   &kp A       &kp R      &kp S      &kp T &kp G                                                         &kp M       &kp N       &kp E      &kp I      &kp O       &kp SQT
+	&kp LSHFT &kp Z       &kp X      &kp C      &kp D       &kp V   &kp LGUI        &kp LSHFT    &kp LSHFT &kp RALT &kp K       &kp H       &kp COMMA  &kp DOT    &kp FSLH    &kp RCTRL
+	                                 &kp LEFT   &kp RIGHT   &kp TAB &kp SPACE       &kp ESC      &kp RCTRL &kp BSPC &kp RET     &kp UP      &kp DOWN
 			>;
       
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
