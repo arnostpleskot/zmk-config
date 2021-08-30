@@ -4,6 +4,31 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define DEFAULT 0
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  ESC  |  Q  |  W  |  F  |  P  |  B  |                                      |  J  |  L  |  U  |  Y  |  ;  |  \  |
+// |  TAB  |  A  |  R  |  S  |  T  |  G  |                                      |  M  |  N  |  E  |  I  |  O  |  '  |
+// | SHIFT |  Z  |  X  |  C  |  D  |  V  |  GUI  | L SHIFT |  | L SHIFT | R-ALT |  K  |  H  |  ,  |  .  |  /  | ALT |
+//                     |  ←  |  →  | TAB | SPACE |   ESC   |  |   CTRL  | BSPC  | RET |  ↑  |  ↓  |
+
+#define LAYER_NUMS 1
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | F11 | F1  | F2  |  F3  | F4  | F5  |                                |  F6  |  F7  | F8  | F9  | F10 | F12 |
+// |     |  1  |  2  |  3   |  4  |  5  |                                |  6   |  7   |  8  |  9  |  0  |     |
+// |     |  `  |  =  |  -   |     |     |     |     |  |     |     |     |      |      |     |  [  |  ]  |     |
+//                   | HOME | END |     |     |     |  |     |     |     | PGUP | PGDN |
+
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |     |     |     |     |     |     |                                |     |     |     |     |     |     |
+// |     |     |     |     |     |     |                                |     |     |     |     |     |     |
+// |     |     |     |     |     |     |     |     |  |     |     |     |     |     |     |     |     |     |
+//                   |     |     |     |     |     |  |     |     |     |     |     |
+
+// &trans &trans &trans &trans &trans &trans                                  &trans &trans &trans &trans &trans &trans
+// &trans &trans &trans &trans &trans &trans                                  &trans &trans &trans &trans &trans &trans
+// &trans &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans &trans
+//	                    &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -12,17 +37,21 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  F  |  P  |  B  |                                      |  J  |  L  |  U  |  Y  |  ;   |  \  |
-// |  TAB  |  A  |  R  |  S  |  T  |  G  |                                      |  M  |  N  |  E  |  I  |  O   |  '  |
-// | SHIFT |  Z  |  X  |  C  |  D  |  V  |  GUI  | L SHIFT |  | L SHIFT | R-ALT |  K  |  H  |  ,  |  .  |  /  | CTRL |
-//                     |  ←  |  →  | TAB | SPACE |   ESC   |  |   CTRL  | BSPC  | RET |  ↑  |  ↓  |
 			bindings = <
-	&kp ESC   &kp Q       &kp W      &kp F      &kp P       &kp B                                                         &kp J       &kp L       &kp U      &kp Y      &kp SEMI    &kp BSLH
-	&kp TAB   &mt LCTRL A &mt LGUI R &mt LALT S &mt LSHFT T &kp G                                                         &kp M       &mt RSHFT N &mt RALT E &mt RGUI I &mt RCTRL O &kp SQT
-	&kp LSHFT &kp Z       &kp X      &kp C      &kp D       &kp V   &kp LGUI        &kp LSHFT    &kp LSHFT &kp RALT       &kp K       &kp H       &kp COMMA  &kp DOT    &kp FSLH    &kp RCTRL
-	                                 &kp LEFT   &kp RIGHT   &kp TAB &mt LSHFT SPACE &kp ESC      &kp RCTRL &mt RSHFT BSPC &kp RET     &kp UP      &kp DOWN
+  &kp ESC   &kp Q &kp W &kp F    &kp P     &kp B                                                                     &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSLH
+  &kp TAB   &kp A &kp R &kp S    &kp T     &kp G                                                                     &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
+  &kp LSHFT &kp Z &kp X &kp C    &kp D     &kp V   &kp LGUI        &mo LAYER_NUMS      &mo LAYER_NUMS &kp RALT       &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &kp RALT
+                        &kp LEFT &kp RIGHT &kp TAB &mt LSHFT SPACE &mt LCTRL ESC       &mt RCTRL ESC  &mt RSHFT BSPC &kp RET &kp UP &kp DOWN
 			>;
 		};
+
+    nums_layer {
+      bindings = <
+  &kp F11 &kp F1    &kp F2    &kp F3    &kp F4  &kp F5                                  &kp F6 &kp F7      &kp F8        &kp F9           &kp F10           &kp F12
+	&trans  &kp N1    &kp N2    &kp N3    &kp N4  &kp N5                                  &kp N6 &kp N7      &kp N8        &kp N9           &kp N0            &trans
+  &trans  &kp GRAVE &kp EQUAL &kp MINUS &trans  &trans &trans &trans      &trans &trans &trans &trans      &trans        &kp LEFT_BRACKET &kp RIGHT_BRACKET &trans
+                              &kp HOME  &kp END &trans &trans &trans      &trans &trans &trans &kp PAGE_UP &kp PAGE_DOWN
+      >;
+    };
 	};
 };
