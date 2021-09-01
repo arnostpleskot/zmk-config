@@ -27,7 +27,7 @@
 // &trans &trans &trans &trans &trans &trans                                  &trans &trans &trans &trans &trans &trans
 // &trans &trans &trans &trans &trans &trans                                  &trans &trans &trans &trans &trans &trans
 // &trans &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans &trans
-//	                    &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans
+//                      &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -71,17 +71,17 @@
     };
   };
 
-	keymap {
-		compatible = "zmk,keymap";
+  keymap {
+    compatible = "zmk,keymap";
 
-		default_layer {
-			bindings = <
+    default_layer {
+      bindings = <
   &gresc    &kp Q &kp W &kp F    &kp P     &kp B                                                                                &kp J              &kp L  &kp U     &kp Y   &kp SEMI &kp BSLH
   &kp TAB   &kp A &kp R &kp S    &kp T     &kp G                                                                                &kp M              &kp N  &kp E     &kp I   &kp O    &kp SQT
   &kp LSHFT &kp Z &kp X &kp C    &kp D     &kp V              &kp LGUI        &to LAYER_NUMS      &to LAYER_NUMS &kp RGUI       &kp K              &kp H  &kp COMMA &kp DOT &kp FSLH &kp RALT
                         &kp LEFT &kp RIGHT &lt LAYER_NUMS TAB &mt LSHFT SPACE &mt LCTRL ESC       &mt RCTRL ESC  &mt RSHFT BSPC &lt LAYER_NUMS RET &kp UP &kp DOWN
-			>;
-		};
+      >;
+    };
 
     nums_layer {
       bindings = <
@@ -91,5 +91,5 @@
                            &kp HOME  &kp END   &trans &trans &trans      &trans &trans &trans &kp PAGE_UP &kp PAGE_DOWN
       >;
     };
-	};
+  };
 };
