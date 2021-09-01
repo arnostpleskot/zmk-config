@@ -33,6 +33,44 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+  combos {
+    compatible = "zmk,combos";
+
+    // left
+    combo_lbkt {
+      timeout-ms = <50>;
+      key-positions = <29 42>;
+      bindings = <&kp LEFT_BRACKET>;
+    };
+    combo_lpar {
+      timeout-ms = <50>;
+      key-positions = <30 43>;
+      bindings = <&kp LEFT_PARENTHESIS>;
+    };
+    combo_lbrc {
+      timeout-ms = <50>;
+      key-positions = <31 44>;
+      bindings = <&kp LEFT_BRACE>;
+    };
+
+    // right
+    combo_rbkt {
+      timeout-ms = <50>;
+      key-positions = <34 47>;
+      bindings = <&kp RIGHT_BRACKET>;
+    };
+    combo_rpar {
+      timeout-ms = <50>;
+      key-positions = <33 46>;
+      bindings = <&kp RIGHT_PARENTHESIS>;
+    };
+    combo_rbrc {
+      timeout-ms = <50>;
+      key-positions = <32 45>;
+      bindings = <&kp RIGHT_BRACE>;
+    };
+  };
+
 	keymap {
 		compatible = "zmk,keymap";
 
