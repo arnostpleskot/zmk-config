@@ -90,7 +90,7 @@
       bindings = <
   &gresc    &kp Q      &kp W      &kp F       &kp P       &kp B                                                                                &kp J              &kp L  &kp U     &kp Y   &kp SEMI &kp BSLH
   &kp TAB   &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                                                &kp M              &kp N  &kp E     &kp I   &kp O    &kp SQT
-  &kp LSHFT &kp Z      &hn LALT X &kp C       &kp D       &kp V              &kp LGUI        &to LAYER_NUMS      &to LAYER_NUMS &kp RGUI       &kp K              &kp H  &kp COMMA &kp DOT &kp FSLH &kp RALT
+  &kp LSHFT &kp Z      &hm LALT X &kp C       &kp D       &kp V              &kp LGUI        &to LAYER_NUMS      &to LAYER_NUMS &kp RGUI       &kp K              &kp H  &kp COMMA &kp DOT &kp FSLH &kp RALT
                                   &kp LEFT    &kp RIGHT   &lt LAYER_NUMS TAB &mt LSHFT SPACE &mt LCTRL ESC       &mt RCTRL ESC  &mt RSHFT BSPC &lt LAYER_NUMS RET &kp UP &kp DOWN
       >;
     };
