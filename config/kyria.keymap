@@ -8,8 +8,6 @@
 #define LAYER_NUMS 1
 #define LAYER_SPECIAL 2
 #define LAYER_FUN 3
-#define LAYER_NAV 4
-#define LAYER_MEDIA 5
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
