@@ -8,6 +8,8 @@
 #define LAYER_NUMS 1
 #define LAYER_SPECIAL 2
 #define LAYER_FUN 3
+#define LAYER_NAV 4
+#define LAYER_MEDIA 5
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -68,10 +70,10 @@
 
     default_layer {
       bindings = <
-        &gresc    &kp Q      &kp W      &kp F       &kp P       &kp B                                                                             &kp J             &kp L        &kp U        &kp Y        &kp SEMI   &kp BSLH
-        &kp TAB   &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                                             &kp M             &hm RSHIFT N &hm RCTRL E  &hm LALT I   &hm RGUI O &kp SQT
-        &kp LSHFT &kp Z      &hm LALT X &kp C       &kp D       &kp V   &kp LGUI  &to LAYER_NUMS      &to LAYER_NUMS          &kp RGUI            &kp K             &kp H        &kp COMMA    &hm RALT DOT &kp FSLH   &kp RALT
-                                        &kp LEFT    &kp RIGHT   &kp ESC &kp SPACE &kp TAB             &lt LAYER_SPECIAL ENTER &lt LAYER_NUMS BSPC &lt LAYER_FUN DEL &kp UP       &kp DOWN
+        &gresc    &kp Q      &kp W      &kp F       &kp P        &kp B                                                                                                   &kp J             &kp L        &kp U        &kp Y        &kp SEMI   &kp BSLH
+        &kp TAB   &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHIFT T &kp G                                                                                                   &kp M             &hm RSHIFT N &hm RCTRL E  &hm LALT I   &hm RGUI O &kp SQT
+        &kp LSHFT &kp Z      &hm LALT X &kp C       &kp D        &kp V               &kp LGUI            &to LAYER_NUMS      &to LAYER_NUMS          &kp RGUI            &kp K             &kp H        &kp COMMA    &hm RALT DOT &kp FSLH   &kp RALT
+                                        &kp LEFT    &kp RIGHT    &lt LAYER_MEDIA ESC &lt LAYER_NAV SPACE &kp TAB             &lt LAYER_SPECIAL ENTER &lt LAYER_NUMS BSPC &lt LAYER_FUN DEL &kp UP       &kp DOWN
       >;
     };
 
@@ -86,9 +88,9 @@
 
     special_layer {
       bindings = <
-        &none &kp LEFT_BRACE &kp AMPERSAND   &kp ASTERISK &kp LEFT_PARENTHESIS &kp RIGHT_BRACE                                                                              &none              &none      &none     &none    &none    &none
-        &none &kp COLON      &kp DOLLAR      &kp PERCENT  &kp CARET            &kp PLUS                                                                                     &none              &kp RSHIFT &kp RCTRL &kp LALT &kp RGUI &none
-        &none &kp TILDE      &kp EXCLAMATION &kp AT_SIGN  &kp HASH             &kp PIPE             &none                 &none               &none                   &none &none              &none      &none     &kp RALT &none    &none
+        &none &kp LEFT_BRACE &kp AMPERSAND   &kp ASTERISK &kp LEFT_PARENTHESIS &kp RIGHT_BRACE                                                                              &none &none      &none     &none    &none    &none
+        &none &kp COLON      &kp DOLLAR      &kp PERCENT  &kp CARET            &kp PLUS                                                                                     &none &kp RSHIFT &kp RCTRL &kp LALT &kp RGUI &none
+        &none &kp TILDE      &kp EXCLAMATION &kp AT_SIGN  &kp HASH             &kp PIPE             &none                 &none               &none                   &none &none &none      &none     &kp RALT &none    &none
                                              &trans       &trans               &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp UNDERSCORE      &lt LAYER_SPECIAL ENTER &none &none &trans     &trans
       >;
     };
@@ -99,6 +101,24 @@
         &none &kp F11 &kp F4 &kp F5 &kp F6 &kp SCROLLLOCK                                        &none             &kp RSHIFT &kp RCTRL &kp LALT &kp RGUI &none
         &none &kp F10 &kp F1 &kp F2 &kp F3 &kp PAUSE_BREAK    &none     &none        &none &none &none             &none      &none     &kp RALT &none    &none
                              &trans &trans &kp K_CONTEXT_MENU &kp SPACE &kp TAB      &none &none &lt LAYER_FUN DEL &trans     &trans
+      >;
+    };
+
+    nav_layer {
+      bindings = <
+        &none &none    &none    &none  &none   &none                                                   &none        &kp K_UNDO &kp K_CUT     &kp K_COPY  &kp K_PASTE &none
+        &none &kp LGUI &kp LALT &LCTRL &LSHIFT &none                                                   &kp CAPSLOCK &kp LEFT   &kp DOWN      &kp UP      &kp RIGHT   &none
+        &none &none    &kp RALT &none  &none   &none &none               &none      &none     &none    &kp INS      &kp HOME   &kp PAGE_DOWN &kp PAGE_UP &kp END     &none
+                                &trans &trans  &none &lt LAYER_NAV SPACE &none      &kp ENTER &kp BSPC &kp DEL      &trans     &trans
+      >;
+    };
+
+    media_layer {
+      bindings = <
+        &none &none    &none    &none  &none   &none                                                            &none      &none          &none             &none           &none      &none
+        &none &kp LGUI &kp LALT &LCTRL &LSHIFT &none                                                            &none      &kp C_PREVIOUS &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp C_NEXT &none
+        &none &none    &kp RALT &none  &none   &none               &none &none      &none      &none            &none      &none          &none             &none           &none      &none
+                                &trans &trans  &lt LAYER_MEDIA ESC &none &none      &kp C_STOP &kp C_PLAY_PAUSE &kp K_MUTE &trans         &trans
       >;
     };
   };
