@@ -73,7 +73,7 @@
         &gresc    &kp Q      &kp W      &kp F       &kp P        &kp B                                                                                                   &kp J             &kp L        &kp U        &kp Y        &kp SEMI   &kp BSLH
         &kp TAB   &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHIFT T &kp G                                                                                                   &kp M             &hm RSHIFT N &hm RCTRL E  &hm LALT I   &hm RGUI O &kp SQT
         &kp LSHFT &kp Z      &hm LALT X &kp C       &kp D        &kp V               &kp LGUI            &to LAYER_MEDIA     &to LAYER_NUMS          &kp RGUI            &kp K             &kp H        &kp COMMA    &hm RALT DOT &kp FSLH   &kp RALT
-                                        &kp LEFT    &kp RIGHT    &lt LAYER_MEDIA ESC &lt LAYER_NAV SPACE &mt CTRL TAB        &lt LAYER_SPECIAL ENTER &lt LAYER_NUMS BSPC &lt LAYER_FUN DEL &kp UP       &kp DOWN
+                                        &kp LEFT    &kp RIGHT    &lt LAYER_FUN ESC   &lt LAYER_NAV SPACE &mt CTRL TAB        &lt LAYER_SPECIAL ENTER &lt LAYER_NUMS BSPC &lt LAYER_FUN DEL &kp UP       &kp DOWN
       >;
     };
 
